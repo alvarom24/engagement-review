@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.app-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.app-header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.app-main {
+  display: flex;
+  height: calc(100% - 4.2rem);
+}
+
+.app-detail {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+.app-detail__placeholder {
+  padding: 1.5rem;
+  color: var(--color-muted-text);
+}

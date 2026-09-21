@@ -1,0 +1,17 @@
+.change-group {
+  margin-bottom: 1.5rem;
+}
+
+.change-group__title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-muted-text);
+  margin: 0 0 0.6rem;
+}
+
+.change-group__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

@@ -1,0 +1,42 @@
+.decision-toggle {
+  display: inline-flex;
+  border: 1px solid var(--color-border);
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+.decision-toggle__option {
+  appearance: none;
+  border: none;
+  background: var(--color-surface);
+  color: inherit;
+  font: inherit;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  border-left: 1px solid var(--color-border);
+}
+
+.decision-toggle__option:first-child {
+  border-left: none;
+}
+
+.decision-toggle__option:hover {
+  background: var(--color-surface-hover);
+}
+
+.decision-toggle__option--active.decision-toggle__option--unreviewed {
+  background: var(--color-muted);
+  font-weight: 600;
+}
+
+.decision-toggle__option--active.decision-toggle__option--accept {
+  background: var(--color-accept);
+  color: var(--color-accept-contrast);
+  font-weight: 600;
+}
+
+.decision-toggle__option--active.decision-toggle__option--decline {
+  background: var(--color-decline);
+  color: var(--color-decline-contrast);
+  font-weight: 600;
+}

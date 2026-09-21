@@ -1,0 +1,22 @@
+.review-progress {
+  margin-bottom: 1.25rem;
+}
+
+.review-progress__bar {
+  height: 0.4rem;
+  border-radius: 999px;
+  background: var(--color-muted);
+  overflow: hidden;
+}
+
+.review-progress__fill {
+  height: 100%;
+  background: var(--color-accept);
+  transition: width 0.15s ease-out;
+}
+
+.review-progress__label {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  color: var(--color-muted-text);
+}

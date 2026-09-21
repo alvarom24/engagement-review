@@ -1,0 +1,36 @@
+.engagement-review {
+  padding: 1.5rem;
+}
+
+.engagement-review__status,
+.engagement-review__empty {
+  color: var(--color-muted-text);
+}
+
+.engagement-review__error {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-decline);
+  border-radius: 0.5rem;
+  color: var(--color-decline);
+}
+
+.engagement-review__save-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.engagement-review__save-error {
+  color: var(--color-decline);
+}
+
+.engagement-review__save-info {
+  color: var(--color-muted-text);
+  font-size: 0.875rem;
+}

@@ -1,0 +1,12 @@
+<article class="change-item" [class.change-item--accepted]="decision() === 'ACCEPTED'" [class.change-item--declined]="decision() === 'DECLINED'">
+  <div class="change-item__body">
+    <h3 class="change-item__title">{{ change().title }}</h3>
+    <p class="change-item__description">{{ change().description }}</p>
+    <p class="change-item__values">
+      <span class="change-item__value change-item__value--old">{{ formatValue(change().oldValue) }}</span>
+      <span class="change-item__arrow" aria-hidden="true">→</span>
+      <span class="change-item__value change-item__value--new">{{ formatValue(change().newValue) }}</span>
+    </p>
+  </div>
+  <app-decision-toggle [decision]="decision()" (decisionChange)="decisionChange.emit($event)" />
+</article>

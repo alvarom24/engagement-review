@@ -1,0 +1,13 @@
+<div class="review-progress">
+  <div class="review-progress__bar">
+    <div class="review-progress__fill" [style.width.%]="percentDecided()"></div>
+  </div>
+  <p class="review-progress__label">
+    @if (progress().total === 0) {
+      No pending changes
+    } @else {
+      {{ progress().decided }} of {{ progress().total }} reviewed
+      · {{ progress().accepted }} accepted · {{ progress().declined }} declined
+    }
+  </p>
+</div>

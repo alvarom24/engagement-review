@@ -1,0 +1,52 @@
+<div class="engagement-review">
+  @switch (state().status) {
+    @case ('loading') {
+      <p class="engagement-review__status" role="status">Loading review…</p>
+    }
+    @case ('error') {
+      <div class="engagement-review__error" role="alert">
+        <p>{{ state().error?.message ?? 'Could not load this review.' }}</p>
+        <button type="button" (click)="retry()">Retry</button>
+      </div>
+    }
+    @case ('loaded') {
+      <app-review-progress [progress]="progress()" />
+
+      @if (state().review?.changes?.length === 0) {
+        <p class="engagement-review__empty">No pending changes for this engagement.</p>
+      } @else {
+        @for (group of groups(); track group.group) {
+          <app-change-group
+            [group]="group.group"
+            [changes]="group.changes"
+            [decisions]="state().decisions"
+            (decisionChange)="onDecisionChange($event)"
+          />
+        }
+      }
+
+      <div class="engagement-review__save-bar">
+        <button
+          type="button"
+          [disabled]="!state().dirty || state().saveStatus === 'saving'"
+          (click)="save()"
+        >
+          {{ state().saveStatus === 'saving' ? 'Saving…' : 'Save decisions' }}
+        </button>
+
+        @if (state().saveStatus === 'error') {
+          <span class="engagement-review__save-error" role="alert">
+            {{ state().saveError?.message ?? 'Save failed.' }}
+          </span>
+        } @else if (state().lastSavedAt) {
+          <span class="engagement-review__save-info">
+            Saved at {{ state().lastSavedAt | date: 'shortTime' }}
+            @if (state().dirty) {
+              — you have unsaved changes since
+            }
+          </span>
+        }
+      </div>
+    }
+  }
+</div>

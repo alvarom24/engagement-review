@@ -1,0 +1,13 @@
+<header class="app-header">
+  <h1>Engagement review</h1>
+</header>
+
+<main class="app-main">
+  <app-engagement-list />
+  <div class="app-detail">
+    <router-outlet #outlet="outlet" />
+    @if (!outlet.isActivated) {
+      <p class="app-detail__placeholder">Select an engagement to review its pending changes.</p>
+    }
+  </div>
+</main>

@@ -1,0 +1,45 @@
+<nav class="engagement-list" aria-label="Engagements">
+  @switch (listStore.status()) {
+    @case ('loading') {
+      <p class="engagement-list__status" role="status">Loading engagements…</p>
+    }
+    @case ('error') {
+      <div class="engagement-list__error" role="alert">
+        <p>{{ listStore.error()?.message ?? 'Could not load engagements.' }}</p>
+        <button type="button" (click)="reload()">Retry</button>
+      </div>
+    }
+    @case ('loaded') {
+      @if (listStore.engagements().length === 0) {
+        <p class="engagement-list__status">No engagements available.</p>
+      } @else {
+        <ul class="engagement-list__items">
+          @for (engagement of listStore.engagements(); track engagement.id) {
+            <li>
+              <a
+                class="engagement-list__item"
+                [routerLink]="['/engagements', engagement.id]"
+                routerLinkActive="engagement-list__item--active"
+              >
+                <span class="engagement-list__name">{{ engagement.name }}</span>
+                <span class="engagement-list__client">{{ engagement.clientName }}</span>
+                <span class="engagement-list__meta">
+                  <span
+                    class="engagement-list__status-badge"
+                    [class.engagement-list__status-badge--error]="engagement.status === 'ERROR'"
+                  >
+                    {{ engagement.status }}
+                  </span>
+                  <span>{{ engagement.pendingChangeCount }} pending</span>
+                  @if (sessionBadge(engagement.id); as badge) {
+                    <span class="engagement-list__session-badge">{{ badge }}</span>
+                  }
+                </span>
+              </a>
+            </li>
+          }
+        </ul>
+      }
+    }
+  }
+</nav>

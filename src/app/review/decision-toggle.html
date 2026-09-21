@@ -1,0 +1,26 @@
+<div class="decision-toggle" role="group" aria-label="Decision">
+  <button
+    type="button"
+    class="decision-toggle__option decision-toggle__option--unreviewed"
+    [class.decision-toggle__option--active]="decision() === undefined"
+    (click)="decisionChange.emit(undefined)"
+  >
+    Unreviewed
+  </button>
+  <button
+    type="button"
+    class="decision-toggle__option decision-toggle__option--accept"
+    [class.decision-toggle__option--active]="decision() === 'ACCEPTED'"
+    (click)="select('ACCEPTED')"
+  >
+    Accept
+  </button>
+  <button
+    type="button"
+    class="decision-toggle__option decision-toggle__option--decline"
+    [class.decision-toggle__option--active]="decision() === 'DECLINED'"
+    (click)="select('DECLINED')"
+  >
+    Decline
+  </button>
+</div>

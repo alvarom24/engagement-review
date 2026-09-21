@@ -1,0 +1,12 @@
+<section class="change-group">
+  <h2 class="change-group__title">{{ group() }}</h2>
+  <div class="change-group__list">
+    @for (change of changes(); track change.id) {
+      <app-change-item
+        [change]="change"
+        [decision]="decisions().get(change.id)"
+        (decisionChange)="decisionChange.emit({ changeId: change.id, decision: $event })"
+      />
+    }
+  </div>
+</section>

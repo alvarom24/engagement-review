@@ -1,0 +1,113 @@
+/* Minimal global defaults: colour tokens, readable element styling, layout primitives. */
+
+:root {
+  --color-text: #1b1f24;
+  --color-muted-text: #5b6672;
+  --color-border: #d8dee6;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f6f8fa;
+  --color-surface-hover: #f6f8fa;
+  --color-muted: #eef1f4;
+  --color-accent: #1f5f9c;
+  --color-accept: #1a7f4b;
+  --color-accept-contrast: #ffffff;
+  --color-decline: #b3261e;
+  --color-decline-contrast: #ffffff;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+  --radius: 6px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  margin-block: 0 0.5rem;
+}
+
+p {
+  margin-block: 0 0.75rem;
+}
+
+code {
+  background: var(--color-surface-subtle);
+  border-radius: 4px;
+  font-size: 0.875em;
+  padding: 0.1em 0.3em;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+select,
+input[type='text'],
+input[type='search'],
+textarea {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: inherit;
+  padding: 0.4rem 0.7rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: var(--color-surface-subtle);
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+label {
+  cursor: pointer;
+}
+
+fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
