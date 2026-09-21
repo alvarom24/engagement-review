@@ -2,18 +2,15 @@
 
 ## AI usage
 
-- Where AI helped: initial architecture (store design, routing, component boundaries), writing the
-  bulk of the components/tests, drafting `DECISIONS.md`.
+- Where AI helped: initial architecture (store design, routing, component boundaries) and plan, writing the
+  bulk of the components/tests.
 - Where you reviewed, corrected, or would rewrite anything — be specific about anything you
-  changed after generation, or would change now that you've read through it.
-- How you verified the generated code: what you actually ran (`npm test`, manual walkthrough in
-  the browser against the specific fixtures below, reading the store logic line by line, etc.).
-- Be ready to explain `ReviewStore`'s race-condition handling (`loadRequestId`, `editGeneration`)
-  and the save-payload logic in your own words — that's the part most likely to come up.
+  changed after generation, or would change now that you've read through it: I have verified using the browser, checking the behavior against mock data (every flow), debugging the code, actually the AI implementation is pretty solid, maybe in a real project will verify with client/stake holders about the design and also, with the team to follow repo practices or other matter in terms of technical composition.
+- How you verified the generated code: generating tests and running them, debugging the code, and reviewing the actual flows against the provided mock data.
 
 ## Approximate time spent
 
-The exercise took around 2 hours, time spent on defining, AI planning, execution, testing and debugging
+The exercise took around 2 hours, time spent on defining, AI planning, execution, testing and debugging.
 
 ## What I'd do next with more time
 
